@@ -5,12 +5,13 @@ call pathogen#infect()
 filetype plugin indent on
 syntax on
 " colorscheme gotham256
-" colorscheme Atelier_DuneLight 
-" colorscheme Atelier_CaveDark 
+" colorscheme Atelier_DuneLight
+" colorscheme Atelier_CaveDark
 " colorscheme elflord
 " colorscheme Chasing_Logic
 " colorscheme purify
-colorscheme OceanicNext
+" colorscheme OceanicNext
+colorscheme molokai
 
 set number
 set guifont=LiberationMono\ 12
@@ -18,20 +19,20 @@ set guifont=LiberationMono\ 12
 set showtabline=2
 
 " airline
-" let g:airline_theme='gruvbox'                                                                                                             
+" let g:airline_theme='gruvbox'
 let g:airline_theme='cool'
 " let g:airline_statusline_ontop=1
-let g:airline_powerline_fonts = 1                                                                                                         
-let g:airline#extensions#tabline#enabled = 1           " enable airline tabline                                                           
-let g:airline#extensions#tabline#show_close_button = 0 " remove 'X' at the end of the tabline                                            
+let g:airline_powerline_fonts = 1
+let g:airline#extensions#tabline#enabled = 1           " enable airline tabline
+let g:airline#extensions#tabline#show_close_button = 0 " remove 'X' at the end of the tabline
 let g:airline#extensions#tabline#tabs_label = ''       " can put text here like BUFFERS to denote buffers (I clear it so nothing is shown)
-let g:airline#extensions#tabline#buffers_label = ''    " can put text here like TABS to denote tabs (I clear it so nothing is shown)      
-let g:airline#extensions#tabline#fnamemod = ':t'       " disable file paths in the tab                                                    
-let g:airline#extensions#tabline#show_tab_count = 0    " dont show tab numbers on the right                                                           
-let g:airline#extensions#tabline#show_buffers = 0      " dont show buffers in the tabline                                                 
-let g:airline#extensions#tabline#tab_min_count = 2     " minimum of 2 tabs needed to display the tabline                                  
-let g:airline#extensions#tabline#show_splits = 0       " disables the buffer name that displays on the right of the tabline               
-let g:airline#extensions#tabline#show_tab_nr = 0       " disable tab numbers                                                              
+let g:airline#extensions#tabline#buffers_label = ''    " can put text here like TABS to denote tabs (I clear it so nothing is shown)
+let g:airline#extensions#tabline#fnamemod = ':t'       " disable file paths in the tab
+let g:airline#extensions#tabline#show_tab_count = 0    " dont show tab numbers on the right
+let g:airline#extensions#tabline#show_buffers = 0      " dont show buffers in the tabline
+let g:airline#extensions#tabline#tab_min_count = 2     " minimum of 2 tabs needed to display the tabline
+let g:airline#extensions#tabline#show_splits = 0       " disables the buffer name that displays on the right of the tabline
+let g:airline#extensions#tabline#show_tab_nr = 0       " disable tab numbers
 let g:airline#extensions#tabline#show_tab_type = 0     " disables the weird ornage arrow on the tabline
 let g:airline#extensions#tabline#buffer_nr_show = 1
 
@@ -106,6 +107,11 @@ set iskeyword=/
 
 " Enable CtrlP
 set runtimepath^=~/.vim/bundle/ctrlp.vim
+" Ignore some folders and files for CtrlP indexing
+let g:ctrlp_custom_ignore = {
+  \ 'dir':  '\.git$\|\.yardoc\|node_modules\|log\|tmp$',
+  \ 'file': '\.so$\|\.dat$|\.DS_Store$'
+  \ }
 
 " Autoclose parenthesis
 " inoremap " ""<left>
@@ -150,5 +156,14 @@ let g:ale_linters_explicit = 1
 let g:ale_lint_on_save = 1
 let g:ale_fix_on_save = 1
 let g:ale_javascript_prettier_options = '--no-semi --single-quote --trailing-comma none'
+
+" Autocompletion
+" Start autocompletion after 4 chars
+let g:ycm_min_num_of_chars_for_completion = 4
+let g:ycm_min_num_identifier_candidate_chars = 4
+let g:ycm_enable_diagnostic_highlighting = 0
+" Don't show YCM's preview window [ I find it really annoying ]
+set completeopt-=preview
+let g:ycm_add_preview_to_completeopt = 0
 
 " END JAVASCRIPT
