@@ -11,7 +11,7 @@ syntax on
 " colorscheme Chasing_Logic
 " colorscheme purify
 " colorscheme OceanicNext
-colorscheme molokai
+colorscheme purify
 
 set number
 set guifont=LiberationMono\ 12
