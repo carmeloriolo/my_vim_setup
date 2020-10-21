@@ -5,11 +5,12 @@ call pathogen#infect()
 filetype plugin indent on
 syntax on
 " colorscheme gotham256
-colorscheme Atelier_DuneLight 
+" colorscheme Atelier_DuneLight 
 " colorscheme Atelier_CaveDark 
 " colorscheme elflord
 " colorscheme Chasing_Logic
 " colorscheme purify
+colorscheme OceanicNext
 
 set number
 set guifont=LiberationMono\ 12
